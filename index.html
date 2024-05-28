@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Data Example</title>
+</head>
+<body>
+  <div id="postCount">Post Count: </div>
+  <div id="userCount">User Count: </div>
+  <div id="commentCount">Comment Count: </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Function to update the DOM
+    function updateDOM(elementId, text) {
+      document.getElementById(elementId).innerText = text;
+    }
+
+    // Fetching data with promise chaining
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        const posts = response.data;
+        updateDOM('postCount', `Post Count: ${posts.length}`);
+        return axios.get('https://jsonplaceholder.typicode.com/users');
+      })
+      .then(response => {
+        const users = response.data;
+        updateDOM('userCount', `User Count: ${users.length}`);
+        return axios.get('https://jsonplaceholder.typicode.com/comments');
+      })
+      .then(response => {
+        const comments = response.data;
+        updateDOM('commentCount', `Comment Count: ${comments.length}`);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
+</body>
+</html>
