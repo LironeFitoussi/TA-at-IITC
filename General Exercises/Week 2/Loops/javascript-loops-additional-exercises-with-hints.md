@@ -67,11 +67,11 @@
     Hint: Use prompt() to get user input for numbers and operations.
     [Learn more about do...while loops](https://www.w3schools.com/jsref/jsref_dowhile.asp)
 
-16. Write a for loop that finds the greatest common divisor (GCD) of two numbers.
+16. HARD: Write a for loop that finds the greatest common divisor (GCD) of two numbers.
     Hint: Use the Euclidean algorithm: repeatedly replace the larger number with the remainder of the larger divided by the smaller.
     [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
 
-17. Create a while loop that implements the Caesar cipher for a given string and shift value.
+17. HARD: Create a while loop that implements the Caesar cipher for a given string and shift value.
     Hint: Use charCodeAt() and String.fromCharCode() to manipulate character codes.
     [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
 
@@ -91,7 +91,7 @@
     Hint: Keep adding terms to a sum until it exceeds the given value.
     [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
 
-22. Write a for loop that prints a diamond pattern of asterisks.
+22. HARD: Write a for loop that prints a diamond pattern of asterisks.
     Hint: Use nested loops and pay attention to spaces and asterisks in each row.
     [Learn more about nested loops](https://www.w3schools.com/js/js_loop_for.asp)
 
@@ -103,7 +103,7 @@
     Hint: Use the loop counter in the denominator and alternate between adding and subtracting.
     [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
 
-25. Write a while loop that simulates the Collatz conjecture: start with a number n, if it's even, divide it by 2, if it's odd, multiply it by 3 and add 1. Repeat until you reach 1.
+25. HARD: Write a while loop that simulates the Collatz conjecture: start with a number n, if it's even, divide it by 2, if it's odd, multiply it by 3 and add 1. Repeat until you reach 1.
     Hint: Use an if-else statement inside the loop to handle even and odd cases.
     [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
 

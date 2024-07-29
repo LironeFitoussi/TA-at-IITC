@@ -64,7 +64,7 @@
     Hint: `arrayName.reverse()` reverses the array in place.
     [Learn more about reverse()](https://www.w3schools.com/jsref/jsref_reverse.asp)
 
-17. Create an array of names. Use the `map()` method to create a new array where each name is prefixed with "Hello, ".
+17. HARD: Create an array of names. Use the `map()` method to create a new array where each name is prefixed with "Hello, ".
     Hint: The callback function for `map()` should return the modified string.
     [Learn more about map()](https://www.w3schools.com/jsref/jsref_map.asp)
 
@@ -80,7 +80,7 @@
     Hint: The callback function for `some()` should return `true` if the element is "banana".
     [Learn more about some()](https://www.w3schools.com/jsref/jsref_some.asp)
 
-21. Create an array of numbers. Use the `reduce()` method to calculate the product of all numbers in the array.
+21. HARD: Create an array of numbers. Use the `reduce()` method to calculate the product of all numbers in the array.
     Hint: The callback function for `reduce()` should multiply the accumulator by the current value.
     [Learn more about reduce()](https://www.w3schools.com/jsref/jsref_reduce.asp)
 
@@ -88,7 +88,7 @@
     Hint: Initialize an empty array and use `push()` inside the loop to add squared values.
     [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
 
-23. Create an array of words. Use the `filter()` method to create a new array containing only words with more than 5 letters.
+23. HARD: Create an array of words. Use the `filter()` method to create a new array containing only words with more than 5 letters.
     Hint: The callback function for `filter()` should check the length of each word.
     [Learn more about filter()](https://www.w3schools.com/jsref/jsref_filter.asp)
 
@@ -96,7 +96,7 @@
     Hint: `arrayName.includes(element)` returns `true` if the element is in the array.
     [Learn more about includes()](https://www.w3schools.com/jsref/jsref_includes_array.asp)
 
-25. Create a 2D array representing a tic-tac-toe board. Fill it with "X", "O", and empty strings. Then, write a function that console.logs the board in a readable format.
+25. IMPOSIBLE: Create a 2D array representing a tic-tac-toe board. Fill it with "X", "O", and empty strings. Then, write a function that console.logs the board in a readable format.
     Hint: Use nested arrays to create a 2D array. Use nested loops to print the board.
     [Learn more about multidimensional arrays](https://www.w3schools.com/js/js_array_methods.asp)
 

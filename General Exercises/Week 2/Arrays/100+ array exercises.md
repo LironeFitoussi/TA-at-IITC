@@ -255,6 +255,7 @@
 70. Implement a custom sort to order an array of numbers based on their remainder when divided by 3.
     Hint: Use the modulo operator (%) in the compare function.
 
+SKIP IT:
 ## Array Iteration: forEach()
 [W3Schools Array forEach()](https://www.w3schools.com/jsref/jsref_foreach.asp)
 
@@ -273,6 +274,7 @@
 75. Use `forEach()` to count how many elements in an array meet a certain condition.
     Hint: Increment a counter variable in the `forEach()` callback when the condition is met.
 
+SKIP IT:
 ## Array Iteration: map()
 [W3Schools Array map()](https://www.w3schools.com/jsref/jsref_map.asp)
 
@@ -348,6 +350,7 @@
 95. Use `some()` and `every()` together to check various conditions on an array.
     Hint: Combine `some()` and `every()` checks using logical operators.
 
+SKIP IT:
 ## Array Iteration: reduce()
 [W3Schools Array reduce()](https://www.w3schools.com/jsref/jsref_reduce.asp)
 
@@ -366,8 +369,7 @@
 100. Use `reduce()` to group an array of objects by a specific property.
      Hint: The accumulator should be an object with keys based on the grouping property.
 
-## Advanced Exercises
-
+## Advanced Exercises - for PROS
 101. Implement a function that removes duplicate elements from an array without using Set.
      Hint: Use `reduce()` or `filter()` with `indexOf()`.
 
