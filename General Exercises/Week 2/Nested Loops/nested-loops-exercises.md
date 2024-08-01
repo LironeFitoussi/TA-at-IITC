@@ -1,417 +1,211 @@
-# 30 Basic Nested Loop Exercises in JavaScript
+# 30 Easy Nested Loop Exercises in JavaScript
 
 ## Exercise 1
-Print a 3x3 grid of asterisks.
+Print a 2x2 grid of asterisks.
 
-Hint: Use two nested loops, both running 3 times.
-Resource: [Nested Loops in JavaScript](https://www.freecodecamp.org/news/nesting-for-loops-in-javascript/)
-Expected Output:
-```
-* * *
-* * *
-* * *
-```
+Hint: Use two nested loops, both running 2 times.
+
+[Learn about nested loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#nested_loops)
 
 ## Exercise 2
-Print a 5x5 grid of numbers, where each number is the sum of its row and column indices.
-
-Hint: Use two nested loops and add the loop variables.
-Resource: [2D Arrays in JavaScript](https://www.freecodecamp.org/news/javascript-2d-arrays/)
-Expected Output:
-```
-0 1 2 3 4
-1 2 3 4 5
-2 3 4 5 6
-3 4 5 6 7
-4 5 6 7 8
-```
-
-## Exercise 3
-Print a right-angled triangle of asterisks with 5 rows.
-
-Hint: The outer loop controls rows, the inner loop prints asterisks based on the row number.
-Resource: [Nested Loops for Patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
-Expected Output:
-```
-*
-* *
-* * *
-* * * *
-* * * * *
-```
-
-## Exercise 4
-Print a 4x4 multiplication table.
-
-Hint: Use nested loops where loop variables represent factors.
-Resource: [Multiplication Tables in JavaScript](https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-62.php)
-Expected Output:
-```
-1 2 3 4
-2 4 6 8
-3 6 9 12
-4 8 12 16
-```
-
-## Exercise 5
-Print a square border of asterisks with side length 5.
-
-Hint: Use nested loops and conditionals to print asterisks only on the border.
-Resource: [Drawing Shapes with Loops](https://javascript.plainenglish.io/how-to-print-stars-pyramid-patterns-in-javascript-7e58c5eec4b8)
-Expected Output:
-```
-* * * * *
-*       *
-*       *
-*       *
-* * * * *
-```
-
-## Exercise 6
-Print numbers from 1 to 25 in a 5x5 grid.
-
-Hint: Use a single counter variable that increments in the inner loop.
-Resource: [Nested Loops in JavaScript](https://www.freecodecamp.org/news/nesting-for-loops-in-javascript/)
-Expected Output:
-```
-1  2  3  4  5
-6  7  8  9  10
-11 12 13 14 15
-16 17 18 19 20
-21 22 23 24 25
-```
-
-## Exercise 7
-Print a pyramid of numbers with 5 rows.
-
-Hint: Use nested loops with proper spacing and number placement.
-Resource: [Number Pyramid in JavaScript](https://www.programiz.com/javascript/examples/pyramid-pattern)
-Expected Output:
-```
-    1
-   2 2
-  3 3 3
- 4 4 4 4
-5 5 5 5 5
-```
-
-## Exercise 8
-Print a checkerboard pattern of 0s and 1s in a 5x5 grid.
-
-Hint: Use the sum of row and column indices to determine whether to print 0 or 1.
-Resource: [2D Arrays in JavaScript](https://www.freecodecamp.org/news/javascript-2d-arrays/)
-Expected Output:
-```
-0 1 0 1 0
-1 0 1 0 1
-0 1 0 1 0
-1 0 1 0 1
-0 1 0 1 0
-```
-
-## Exercise 9
-Print the first 5 rows of Pascal's triangle.
-
-Hint: Use an array to store previous row's values and calculate current row based on it.
-Resource: [Pascal's Triangle in JavaScript](https://www.geeksforgeeks.org/pascal-triangle/)
-Expected Output:
-```
-    1
-   1 1
-  1 2 1
- 1 3 3 1
-1 4 6 4 1
-```
-
-## Exercise 10
-Print a hollow square of asterisks with side length 5.
-
-Hint: Print asterisks only when on the border of the square.
-Resource: [Drawing Shapes with Loops](https://javascript.plainenglish.io/how-to-print-stars-pyramid-patterns-in-javascript-7e58c5eec4b8)
-Expected Output:
-```
-* * * * *
-*       *
-*       *
-*       *
-* * * * *
-```
-
-## Exercise 11
-Print a right-angled triangle of numbers from 1 to 15.
+Print numbers from 1 to 4 in a 2x2 grid.
 
 Hint: Use a counter variable that increments in the inner loop.
-Resource: [Number Patterns in JavaScript](https://www.programiz.com/javascript/examples/pyramid-pattern)
-Expected Output:
-```
-1
-2 3
-4 5 6
-7 8 9 10
-11 12 13 14 15
-```
+
+[Learn about variables in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#loop_scope_and_closures)
+
+## Exercise 3
+Print a right-angled triangle of asterisks with 3 rows.
+
+Hint: The outer loop controls rows, the inner loop prints asterisks based on the row number.
+
+[Learn about triangular patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
+
+## Exercise 4
+Print a 3x3 grid where each cell contains the sum of its indices.
+
+Hint: Use the loop variables as indices and add them.
+
+[Learn about 2D arrays](https://www.freecodecamp.org/news/javascript-2d-arrays/)
+
+## Exercise 5
+Print a 3x3 multiplication table.
+
+Hint: Multiply the outer loop variable by the inner loop variable.
+
+[Learn about multiplication tables](https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-62.php)
+
+## Exercise 6
+Print a square border of asterisks with side length 3.
+
+Hint: Use conditional statements to print asterisks only on the border.
+
+[Learn about conditional statements in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+
+## Exercise 7
+Print numbers from 1 to 9 in a 3x3 grid.
+
+Hint: Use a single counter variable that increments in the inner loop.
+
+[Learn about incrementing in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
+
+## Exercise 8
+Print a 3x3 grid of even numbers starting from 2.
+
+Hint: Start with 2 and increment by 2 in each iteration.
+
+[Learn about arithmetic in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
+
+## Exercise 9
+Print a right-angled triangle of numbers with 3 rows.
+
+Hint: Use the inner loop variable as the number to print.
+
+[Learn about nested loops for patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
+
+## Exercise 10
+Print a 3x3 checkerboard pattern of 0s and 1s.
+
+Hint: Use the sum of indices and the modulo operator to determine whether to print 0 or 1.
+
+[Learn about the modulo operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder)
+
+## Exercise 11
+Print a 3x3 grid where each cell contains its row number.
+
+Hint: Use the outer loop variable as the number to print.
+
+[Learn about accessing loop variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
 
 ## Exercise 12
-Print a 4x4 grid where each cell contains its row number repeated column times.
+Print a 3x3 grid where each cell contains its column number.
 
-Hint: Use string repeat method or a nested loop for repetition.
-Resource: [String Repeat in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
-Expected Output:
-```
-1 11 111 1111
-2 22 222 2222
-3 33 333 3333
-4 44 444 4444
-```
+Hint: Use the inner loop variable as the number to print.
+
+[Learn about nested loop variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#nested_loops)
 
 ## Exercise 13
-Print an inverted right-angled triangle of asterisks with 5 rows.
+Print a 4x4 grid of alternating X and O.
 
-Hint: Start with the maximum number of asterisks and decrease in each row.
-Resource: [Inverted Triangle Pattern](https://www.programmingwithbasics.com/2016/03/printing-inverted-right-triangle-star-pattern.html)
-Expected Output:
-```
-* * * * *
-* * * *
-* * *
-* *
-*
-```
+Hint: Use the sum of indices and the modulo operator to determine whether to print X or O.
+
+[Learn about conditional operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#conditional_ternary_operator)
 
 ## Exercise 14
-Print a 5x5 grid where each cell contains the larger of its row or column index.
+Print a right-angled triangle of odd numbers with 4 rows.
 
-Hint: Use Math.max() to compare row and column indices.
-Resource: [Math.max() in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
-Expected Output:
-```
-0 1 2 3 4
-1 1 2 3 4
-2 2 2 3 4
-3 3 3 3 4
-4 4 4 4 4
-```
+Hint: Use a counter that starts at 1 and increments by 2.
+
+[Learn about incrementing in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
 
 ## Exercise 15
+Print a 3x3 grid where each cell contains the absolute difference between its row and column indices.
+
+Hint: Use Math.abs() to calculate the absolute difference.
+
+[Learn about Math.abs()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+
+## Exercise 16
+Print a hollow right-angled triangle of asterisks with 4 rows.
+
+Hint: Print asterisks only when it's the first or last column, or the last row.
+
+[Learn about logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#logical_operators)
+
+## Exercise 17
+Print a 4x4 grid where each cell contains the smaller of its row or column index.
+
+Hint: Use Math.min() to compare row and column indices.
+
+[Learn about Math.min()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
+
+## Exercise 18
+Print a 4x4 grid where each cell contains the larger of its row or column index.
+
+Hint: Use Math.max() to compare row and column indices.
+
+[Learn about Math.max()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
+
+## Exercise 19
+Print a right-angled triangle of consecutive letters (A-Z) with 4 rows.
+
+Hint: Use String.fromCharCode() to convert numbers to letters.
+
+[Learn about String.fromCharCode()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
+
+## Exercise 20
+Print a 3x3 grid where each cell contains the sum of all numbers from 1 to the product of its indices.
+
+Hint: Use a nested loop to calculate the sum for each cell.
+
+[Learn about nested loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#nested_loops)
+
+## Exercise 21
+Print a 4x4 grid of ascending numbers in a spiral pattern.
+
+Hint: Use a 2D array and fill it in a spiral pattern.
+
+[Learn about 2D arrays](https://www.freecodecamp.org/news/javascript-2d-arrays/)
+
+## Exercise 22
 Print a diamond pattern of asterisks with maximum width 5.
 
 Hint: Combine an increasing triangle with a decreasing triangle.
-Resource: [Diamond Pattern in JavaScript](https://www.programmingwithbasics.com/2016/03/printing-diamond-star-pattern.html)
-Expected Output:
-```
-  *
- ***
-*****
- ***
-  *
-```
 
-## Exercise 16
-Print a 6x6 grid where each cell contains the product of its row and column indices.
-
-Hint: Multiply the row index by the column index.
-Resource: [Multiplication Table in JavaScript](https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-62.php)
-Expected Output:
-```
-0 0 0 0 0 0
-0 1 2 3 4 5
-0 2 4 6 8 10
-0 3 6 9 12 15
-0 4 8 12 16 20
-0 5 10 15 20 25
-```
-
-## Exercise 17
-Print a right-angled triangle of letters (A-Z) with 5 rows.
-
-Hint: Use String.fromCharCode() to convert numbers to letters.
-Resource: [String.fromCharCode() in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode)
-Expected Output:
-```
-A
-B C
-D E F
-G H I J
-K L M N O
-```
-
-## Exercise 18
-Print a 5x5 spiral of numbers from 1 to 25.
-
-Hint: Use a 2D array and fill it in a spiral pattern.
-Resource: [Spiral Matrix in JavaScript](https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/)
-Expected Output:
-```
-1  2  3  4  5
-16 17 18 19 6
-15 24 25 20 7
-14 23 22 21 8
-13 12 11 10 9
-```
-
-## Exercise 19
-Print a hollow pyramid of asterisks with 5 rows.
-
-Hint: Print asterisks only for the border of the pyramid.
-Resource: [Hollow Pyramid Pattern](https://www.geeksforgeeks.org/programs-printing-pyramid-patterns-javascript/)
-Expected Output:
-```
-    *
-   * *
-  *   *
- *     *
-*********
-```
-
-## Exercise 20
-Print a 4x4 grid where each cell contains the sum of all numbers from 1 to the product of its indices.
-
-Hint: Use a helper function to calculate the sum of numbers from 1 to n.
-Resource: [Sum of Natural Numbers in JavaScript](https://www.programiz.com/javascript/examples/sum-natural-number)
-Expected Output:
-```
-1 1 1 1
-1 3 6 10
-1 6 21 55
-1 10 55 220
-```
-
-## Exercise 21
-Print an hourglass pattern of asterisks with maximum width 5.
-
-Hint: Combine a decreasing triangle with an increasing triangle.
-Resource: [Hourglass Pattern in JavaScript](https://www.geeksforgeeks.org/programs-printing-pyramid-patterns-javascript/)
-Expected Output:
-```
-*****
- ***
-  *
- ***
-*****
-```
-
-## Exercise 22
-Print a 5x5 grid where each cell contains the absolute difference between its row and column indices.
-
-Hint: Use Math.abs() to calculate the absolute difference.
-Resource: [Math.abs() in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
-Expected Output:
-```
-0 1 2 3 4
-1 0 1 2 3
-2 1 0 1 2
-3 2 1 0 1
-4 3 2 1 0
-```
+[Learn about complex patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
 
 ## Exercise 23
-Print a right-angled triangle of even numbers up to 30.
+Print a 4x4 grid where each cell contains the result of its row index raised to the power of its column index.
 
-Hint: Use a counter that increments by 2 in each iteration.
-Resource: [Number Patterns in JavaScript](https://www.programiz.com/javascript/examples/pyramid-pattern)
-Expected Output:
-```
-2
-4 6
-8 10 12
-14 16 18 20
-22 24 26 28 30
-```
+Hint: Use the ** operator for exponentiation.
+
+[Learn about the exponentiation operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation)
 
 ## Exercise 24
-Print a 6x6 grid where each cell contains the remainder when the product of its indices is divided by 5.
+Print a right-angled triangle of descending numbers with 4 rows, starting from 10.
 
-Hint: Use the modulo operator (%) to calculate the remainder.
-Resource: [Modulo Operator in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder)
-Expected Output:
-```
-0 0 0 0 0 0
-0 1 2 3 4 0
-0 2 4 1 3 0
-0 3 1 4 2 0
-0 4 3 2 1 0
-0 0 0 0 0 0
-```
+Hint: Initialize a counter with 10 and decrement it in each iteration.
+
+[Learn about decrementing in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)
 
 ## Exercise 25
-Print a butterfly pattern of asterisks with maximum width 5.
+Print a 4x4 grid where each cell contains the result of (row index * 2) + column index.
 
-Hint: Combine two right-angled triangles with spaces in between.
-Resource: [Butterfly Pattern in JavaScript](https://www.geeksforgeeks.org/program-print-butterfly-pattern-javascript/)
-Expected Output:
-```
-*   *
-** **
-*****
-** **
-*   *
-```
+Hint: Use arithmetic operations with the loop variables.
+
+[Learn about arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
 
 ## Exercise 26
-Print a 5x5 grid where each cell contains the smaller of its row or column index.
+Print a hollow square of hash symbols (#) with side length 5.
 
-Hint: Use Math.min() to compare row and column indices.
-Resource: [Math.min() in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
-Expected Output:
-```
-0 0 0 0 0
-0 1 1 1 1
-0 1 2 2 2
-0 1 2 3 3
-0 1 2 3 4
-```
+Hint: Print hash symbols only when it's the first or last row, or the first or last column.
+
+[Learn about logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#logical_operators)
 
 ## Exercise 27
-Print a right-angled triangle of odd numbers up to 25.
+Print a 4x4 grid where each cell contains the smaller of: the product of its indices or 5.
 
-Hint: Use a counter that increments by 2, starting from 1.
-Resource: [Number Patterns in JavaScript](https://www.programiz.com/javascript/examples/pyramid-pattern)
-Expected Output:
-```
-1
-3 5
-7 9 11
-13 15 17 19
-21 23 25
-```
+Hint: Use Math.min() to compare the product with 5.
+
+[Learn about Math.min()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
 
 ## Exercise 28
-Print a 4x4 grid where each cell contains the maximum of all numbers from 1 to the sum of its indices.
+Print a right-angled triangle of asterisks with 5 rows, but skip the third row.
 
-Hint: Use a helper function to calculate the maximum of numbers from 1 to n.
-Resource: [Math.max() in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
-Expected Output:
-```
-1 2 3 4
-2 3 4 5
-3 4 5 6
-4 5 6 7
-```
+Hint: Use an if statement to skip printing when the row index is 3.
+
+[Learn about if statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
 ## Exercise 29
-Print a hollow diamond pattern of asterisks with maximum width 5.
+Print a 5x5 grid where cells on the main diagonal (where row index equals column index) contain 1, and all other cells contain 0.
 
-Hint: Combine hollow increasing and decreasing triangles.
-Resource: [Hollow Diamond Pattern in JavaScript](https://www.geeksforgeeks.org/program-to-print-hollow-diamond-pattern/)
-Expected Output:
-```
-  *
- * *
-*   *
- * *
-  *
-```
+Hint: Use an if statement to check if row index equals column index.
+
+[Learn about equality operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality)
 
 ## Exercise 30
-Print a 5x5 grid where each cell contains the number of factors of the product of its indices.
+Print a 4x4 grid where each cell contains the sum of its row index, column index, and the number 1.
 
-Hint: Create a function to count factors and use it within nested loops.
-Resource: [Counting Factors in JavaScript](https://www.geeksforgeeks.org/find-divisors-natural-number-set-1/)
-Expected Output:
-```
-1 2 2 3 2
-2 3 4 4 4
-2 4 4 6 4
-3 4 6 6 8
-2 4 4 8 6
-```
+Hint: Add the row index, column index, and 1 for each cell.
+
+[Learn about arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#arithmetic_operators)
