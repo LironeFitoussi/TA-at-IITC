@@ -1,14 +1,9 @@
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useContext } from "react"
-import { ThemeContext } from "../contexts/ThemeContext"
-
+import { useTheme } from "../contexts/ThemeContext";
 export function Button() {
-    const context = useContext(ThemeContext)
+    const { theme, toggleTheme } = useTheme()
+    // console.log("Button got Rendered");
 
-    if (context === undefined) throw new Error("BABA")
-    
-    const { theme, toggleTheme } = context 
-    
     return (
         <button onClick={toggleTheme}>
             {theme === 'light' ? <FaSun /> : <FaMoon />}

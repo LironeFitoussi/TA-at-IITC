@@ -1,14 +1,14 @@
-import { useContext } from "react"
-import { ThemeContext } from "../contexts/ThemeContext"
+import { useTheme } from "../contexts/ThemeContext";
+import { Paragraph } from "./Paragraph";
 
 export function Footer() {
-    const context = useContext(ThemeContext)
-    if (context === undefined) throw new Error("BABA")
-    const { theme } = context 
+    const { theme } = useTheme()
 
+    // console.log("Footer got Rendered");
+    
     return (
         <footer className={`footer ${theme}`}>
-            <p>Footer - Theme: {theme}</p>
+            <Paragraph/>
         </footer>
     )
 }

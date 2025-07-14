@@ -7,16 +7,19 @@ import { Footer } from './components/Footer'
 
 // Context
 import { ThemeProvider } from './contexts/ThemeContext'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
-    <ThemeProvider>
-      <div className="app">
-        <Header/>
-        <Content />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider>
+        <div className="app">
+          <Header/>
+          <Content />
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </AuthProvider>
   )
 }
 

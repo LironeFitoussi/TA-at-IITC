@@ -92,3 +92,15 @@
   border-top-color: #404040;
   color: #ffffff;
 }
+
+.user-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}

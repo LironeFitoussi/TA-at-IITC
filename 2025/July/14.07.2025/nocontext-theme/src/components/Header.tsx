@@ -1,15 +1,14 @@
-import { useContext } from "react"
-import { ThemeContext } from "../contexts/ThemeContext"
-
+import { useTheme } from "../contexts/ThemeContext";
 import { Button } from "./Button"
+import { UserHero } from "./UserHero";
 
 export function Header() {
-    const context = useContext(ThemeContext)
-    if (context === undefined) throw new Error("BABA")
-    const { theme } = context 
+    const { theme } = useTheme()
+    // console.log("Header got Rendered");
 
     return (
         <header className={`header ${theme}`}>
+            <UserHero />
             <h1>My App</h1>
             <Button />
         </header>
