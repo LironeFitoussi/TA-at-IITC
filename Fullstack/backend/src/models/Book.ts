@@ -1,39 +1,19 @@
 import { Book, CreateBookRequest, UpdateBookRequest } from '../types';
 
 class BookModel {
-  private books: Book[] = [
-    {
-        id: "1",
-        title: "The Great Gatsby",
-        author: "F. Scott Fitzgerald",
-        description: "A classic American novel set in the Jazz Age",
-        publishedYear: 1925,
-        userId: "system",
-        createdAt: new Date()
-    },
-    {
-        id: "2",
-        title: "To Kill a Mockingbird",
-        author: "Harper Lee",
-        description: "A novel about racial injustice in the American South",
-        publishedYear: 1960,
-        userId: "system",
-        createdAt: new Date()
-    },
-    {
-        id: "3",
-        title: "1984",
-        author: "George Orwell",
-        description: "A dystopian social science fiction novel",
-        publishedYear: 1949,
-        userId: "system",
-        createdAt: new Date()
-    }
-  ];
+  private books: Book[] = [];
+  private lastId: number = 0;
+
+  private generateId(): string {
+    // Use a combination of timestamp and counter to ensure uniqueness
+    const timestamp = Date.now();
+    this.lastId = Math.max(this.lastId + 1, timestamp);
+    return this.lastId.toString();
+  }
 
   create(bookData: CreateBookRequest, userId: string): Book {
     const book: Book = {
-      id: Date.now().toString(),
+      id: this.generateId(),
       ...bookData,
       userId,
       createdAt: new Date()
@@ -75,6 +55,11 @@ class BookModel {
 
   // Add some sample books for demonstration
   seedData(): void {
+    // Only seed if there are no books yet
+    if (this.books.length > 0) {
+      return;
+    }
+
     const sampleBooks = [
       {
         title: "The Great Gatsby",

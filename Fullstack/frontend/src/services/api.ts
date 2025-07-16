@@ -1,10 +1,12 @@
 import axios from 'axios';
 import type { User, Book, LoginCredentials, RegisterCredentials, CreateBookData } from '../types';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+if (!import.meta.env.VITE_API_BASE_URL) {
+  throw new Error('VITE_API_BASE_URL is not defined');
+}
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true, // Important for cookies
   headers: {
     'Content-Type': 'application/json',
@@ -25,6 +27,11 @@ export const authApi = {
 
   async logout(): Promise<{ message: string }> {
     const response = await api.post('/auth/logout');
+    return response.data;
+  },
+
+  async checkAuth(): Promise<{ user: User }> {
+    const response = await api.get('/auth/me');
     return response.data;
   },
 };

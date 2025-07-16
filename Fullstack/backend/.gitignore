@@ -13,6 +13,9 @@ dist-ssr
 *.local
 node_modules
 
+# Data folder - contains user data
+data/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

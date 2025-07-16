@@ -4,7 +4,7 @@ import BookModel from '../models/Book';
 import { AuthRequest } from '../middleware/auth';
 
 class BookController {
-  static getAllBooks(req: Request, res: Response) {
+  async getAllBooks(req: Request, res: Response): Promise<void> {
     try {
       const books = BookModel.findAll();
       res.json(books);
@@ -13,11 +13,12 @@ class BookController {
     }
   }
 
-  static getBookById(req: Request, res: Response) {
+  async getBookById(req: Request, res: Response): Promise<void> {
     try {
       const book = BookModel.findById(req.params.id);
       if (!book) {
-        return res.status(404).json({ message: 'Book not found' });
+        res.status(404).json({ message: 'Book not found' });
+        return;
       }
       res.json(book);
     } catch (error) {
@@ -25,13 +26,14 @@ class BookController {
     }
   }
 
-  static createBook(req: AuthRequest, res: Response) {
+  async createBook(req: AuthRequest, res: Response): Promise<void> {
     try {
       const { title, author, description, publishedYear }: CreateBookRequest = req.body;
 
       // Validate input
       if (!title || !author || !description || !publishedYear) {
-        return res.status(400).json({ message: 'All fields are required' });
+        res.status(400).json({ message: 'All fields are required' });
+        return;
       }
 
       const book = BookModel.create(
@@ -45,16 +47,18 @@ class BookController {
     }
   }
 
-  static updateBook(req: AuthRequest, res: Response) {
+  async updateBook(req: AuthRequest, res: Response): Promise<void> {
     try {
       const book = BookModel.findById(req.params.id);
       if (!book) {
-        return res.status(404).json({ message: 'Book not found' });
+        res.status(404).json({ message: 'Book not found' });
+        return;
       }
 
       // Check if user owns the book
       if (book.userId !== req.user!.userId) {
-        return res.status(403).json({ message: 'You can only update your own books' });
+        res.status(403).json({ message: 'You can only update your own books' });
+        return;
       }
 
       const updateData: UpdateBookRequest = req.body;
@@ -66,21 +70,24 @@ class BookController {
     }
   }
 
-  static deleteBook(req: AuthRequest, res: Response) {
+  async deleteBook(req: AuthRequest, res: Response): Promise<void> {
     try {
       const book = BookModel.findById(req.params.id);
       if (!book) {
-        return res.status(404).json({ message: 'Book not found' });
+        res.status(404).json({ message: 'Book not found' });
+        return;
       }
 
       // Check if user owns the book
       if (book.userId !== req.user!.userId) {
-        return res.status(403).json({ message: 'You can only delete your own books' });
+        res.status(403).json({ message: 'You can only delete your own books' });
+        return;
       }
 
       const deleted = BookModel.delete(req.params.id);
       if (!deleted) {
-        return res.status(404).json({ message: 'Book not found' });
+        res.status(404).json({ message: 'Book not found' });
+        return;
       }
 
       res.json({ message: 'Book deleted successfully' });
@@ -89,7 +96,7 @@ class BookController {
     }
   }
 
-  static getUserBooks(req: AuthRequest, res: Response) {
+  async getUserBooks(req: AuthRequest, res: Response): Promise<void> {
     try {
       const books = BookModel.findByUserId(req.user!.userId);
       res.json(books);
@@ -99,4 +106,4 @@ class BookController {
   }
 }
 
-export default BookController; 
+export default new BookController(); 
