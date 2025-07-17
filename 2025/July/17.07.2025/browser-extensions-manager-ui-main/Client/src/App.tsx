@@ -1,49 +1,15 @@
-import { useState } from 'react'
 import './App.css'
-import axios from 'axios'
+import { AuthProvider } from './contexts/AuthContext'
 
+// Routes
+import MainPage from './routes/MainPage'
 function App() {
-  const [user, setUser] = useState("")
-  const [userName, setUsername] = useState("")
-  const [password, setPassword] = useState("")
 
-  const logInUser = async (username: string, password: string) => {
-      const res =await axios.post('http://localhost:3001/api/auth/sign-in', {
-        username, 
-        password
-      })
-      const { data } = res;
-
-      setUser(() => data.token)
-  }
 
   return (
-    <>
-      {user ? <p>the user is {user}</p> : <form>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          id="username"
-          style={{ display: "block", marginBottom: "8px" }}
-          onChange={e => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          id="password"
-          style={{ display: "block", marginBottom: "8px" }}
-          onChange={e => setPassword(e.target.value)}
-        />
-        <button
-          type="button"
-          onClick={() => logInUser(userName, password)}
-        >
-          Login
-        </button>
-        </form>}
-    </>
+    <AuthProvider>
+      <MainPage />
+    </AuthProvider>
   )
 }
 
