@@ -1,14 +1,13 @@
-import './App.css'
 import { AuthProvider } from './contexts/AuthContext'
 
 // Routes
-import MainPage from './routes/MainPage'
+import Layout from './routes/layout'
+
+
 function App() {
-
-
   return (
     <AuthProvider>
-      <MainPage />
+      <Layout />
     </AuthProvider>
   )
 }
