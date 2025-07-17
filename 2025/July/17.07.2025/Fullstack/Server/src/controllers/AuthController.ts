@@ -3,7 +3,7 @@ import { LoginRequest, RegisterRequest } from '../types';
 import UserModel from '../models/User';
 import { generateAccessToken, AuthRequest } from '../middleware/auth';
 
-class AuthController {
+const AuthController = {
   async register(req: Request, res: Response): Promise<void> {
     try {
       const { email, password, name }: RegisterRequest = req.body;
@@ -46,7 +46,7 @@ class AuthController {
     } catch (error) {
       res.status(500).json({ message: 'Server error' });
     }
-  }
+  },
 
   async login(req: Request, res: Response): Promise<void> {
     try {
@@ -94,7 +94,7 @@ class AuthController {
     } catch (error) {
       res.status(500).json({ message: 'Server error' });
     }
-  }
+  },
 
   async getMe(req: AuthRequest, res: Response): Promise<void> {
     try {
@@ -114,12 +114,12 @@ class AuthController {
     } catch (error) {
       res.status(500).json({ message: 'Server error' });
     }
-  }
+  },
 
   async logout(req: Request, res: Response): Promise<void> {
     res.clearCookie('accessToken');
     res.json({ message: 'Logged out successfully' });
   }
-}
+};
 
-export default new AuthController(); 
+export default AuthController; 
