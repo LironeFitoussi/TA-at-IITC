@@ -1,5 +1,10 @@
+// Components
+import Header from "../components/Header"
+
 export default function ExtensionPage () {
     return (
-        <p>this is the GOAT</p>
+        <div className="px-20 py-8 ">
+            <Header/>
+        </div>
     )
 }

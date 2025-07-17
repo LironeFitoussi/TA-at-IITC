@@ -7,7 +7,7 @@ export default function Layout() {
 
     return (
         <div className="min-w-screen min-h-screen main-style-dark" >
-            { user.id ? <ExtensionPage /> : <AuthPage />}
+            { !user.id ? <ExtensionPage /> : <AuthPage />}
         </div>
     )
 }
