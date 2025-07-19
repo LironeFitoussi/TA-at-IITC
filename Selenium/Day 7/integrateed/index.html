@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integrated Workflow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #container {
+      text-align: center;
+      width: 300px;
+    }
+
+    #spinner {
+      display: none;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    #download-link {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      background-color: #3498db;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #download-link:hover {
+      background-color: #2874a6;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>File Upload Workflow</h1>
+    <form id="upload-form">
+      <input type="file" id="file-upload" required>
+      <button type="submit" id="upload-btn">Upload</button>
+    </form>
+    <div id="spinner"></div>
+    <div id="status"></div>
+    <a id="download-link" href="https://tourism.gov.in/sites/default/files/2019-04/dummy-pdf_2.pdf" download="sample-file.pdf">Download File</a>
+  </div>
+
+  <script>
+    const uploadForm = document.getElementById('upload-form');
+    const spinner = document.getElementById('spinner');
+    const status = document.getElementById('status');
+    const downloadLink = document.getElementById('download-link');
+
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Ensure a file is selected
+      const fileInput = document.getElementById('file-upload');
+      if (!fileInput.files.length) {
+        alert("Please select a file before uploading.");
+        return;
+      }
+
+      // Reset UI
+      spinner.style.display = 'block';
+      status.textContent = '';
+      downloadLink.style.display = 'none';
+
+      // Simulate file upload processing
+      setTimeout(() => {
+        spinner.style.display = 'none';
+        status.textContent = 'Upload Complete';
+        downloadLink.style.display = 'block';
+      }, 3000); // Simulate 3-second delay
+    });
+  </script>
+</body>
+</html>

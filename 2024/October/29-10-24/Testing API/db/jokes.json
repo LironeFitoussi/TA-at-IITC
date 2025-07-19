@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "setup": "Why don't scientists trust atoms?",
+        "punchline": "Because they make up everything!"
+    },
+    {
+        "id": 2,
+        "setup": "Why did the scarecrow win an award?",
+        "punchline": "Because he was outstanding in his field!"
+    },
+    {
+        "id": 3,
+        "setup": "What do you call fake spaghetti?",
+        "punchline": "An impasta!"
+    },
+    {
+        "id": 4,
+        "setup": "Why did the bicycle fall over?",
+        "punchline": "Because it was two-tired!"
+    },
+    {
+        "id": 5,
+        "setup": "What do you call cheese that isn't yours?",
+        "punchline": "Nacho cheese!"
+    },
+    {
+        "id": 6,
+        "setup": "Why couldn't the leopard play hide and seek?",
+        "punchline": "Because he was always spotted!"
+    },
+    {
+        "id": 7,
+        "setup": "What do you call a bear with no teeth?",
+        "punchline": "A gummy bear!"
+    },
+    {
+        "id": 8,
+        "setup": "Why did the math book look sad?",
+        "punchline": "Because it had too many problems."
+    },
+    {
+        "id": 9,
+        "setup": "What do you call a factory that makes good products?",
+        "punchline": "A satisfactory!"
+    },
+    {
+        "id": 10,
+        "setup": "Why did the golfer bring two pairs of pants?",
+        "punchline": "In case he got a hole in one!"
+    }
+]

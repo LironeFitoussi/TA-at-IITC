@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Headphones",
+        "category": "Electronics",
+        "price": 99.99,
+        "inStock": true
+    },
+    {
+        "id": 2,
+        "name": "Gaming Mouse",
+        "category": "Accessories",
+        "price": 49.99,
+        "inStock": true
+    },
+    {
+        "id": 3,
+        "name": "Office Chair",
+        "category": "Furniture",
+        "price": 199.99,
+        "inStock": false
+    },
+    {
+        "id": 4,
+        "name": "Bluetooth Speaker",
+        "category": "Electronics",
+        "price": 29.99,
+        "inStock": true
+    },
+    {
+        "id": 5,
+        "name": "Laptop Stand",
+        "category": "Accessories",
+        "price": 39.99,
+        "inStock": true
+    },
+    {
+        "id": 6,
+        "name": "Smartphone",
+        "category": "Electronics",
+        "price": 699.99,
+        "inStock": false
+    },
+    {
+        "id": 7,
+        "name": "Running Shoes",
+        "category": "Footwear",
+        "price": 79.99,
+        "inStock": true
+    },
+    {
+        "id": 8,
+        "name": "Water Bottle",
+        "category": "Sports",
+        "price": 14.99,
+        "inStock": true
+    },
+    {
+        "id": 9,
+        "name": "Notebook",
+        "category": "Stationery",
+        "price": 4.99,
+        "inStock": true
+    },
+    {
+        "id": 10,
+        "name": "Desk Lamp",
+        "category": "Lighting",
+        "price": 24.99,
+        "inStock": true
+    }
+]

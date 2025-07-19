@@ -1,0 +1,16 @@
+2025-02-03 15:13:31,313 - INFO - starting automation test
+2025-02-03 15:13:34,626 - INFO - found Alert button
+2025-02-03 15:13:34,663 - INFO - clicked Alert button
+2025-02-03 15:13:34,664 - INFO - alert text matches
+2025-02-03 15:13:34,664 - INFO - accepted Alert alert
+2025-02-03 15:13:34,727 - INFO - found Confirm button
+2025-02-03 15:13:34,753 - INFO - clicked Confirm button
+2025-02-03 15:13:34,754 - INFO - alert text matches
+2025-02-03 15:13:34,761 - INFO - accepted Confirm alert
+2025-02-03 15:13:34,769 - INFO - found prompt button
+2025-02-03 15:13:34,817 - INFO - clicked prompt button
+2025-02-03 15:13:34,819 - INFO - alert text matches
+2025-02-03 15:13:34,820 - INFO - input entered
+2025-02-03 15:13:34,830 - INFO - accepted prompt alert
+2025-02-03 15:13:34,852 - ERROR - result text mismatch
+2025-02-03 15:13:34,852 - INFO - automation test done

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px black solid;
+            height: 500px;
+            display: flex;
+            flex-direction: column-reverse;
+            /* gap: 20px; */
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .box {
+            min-width: 100px;
+            min-height: 100px;
+        }
+
+        #first {
+            background-color: #66266f;
+        }
+        
+        #second {
+            background-color: blue;
+        }
+
+        #third {
+            background-color: green;
+        }
+    
+        </style>
+</head>
+<body>
+    <h1>Flex Box</h1>
+    <div class="container">
+        <div class="box" id="first"></div>
+        <div class="box" id="second"></div>
+        <div class="box" id="third"></div>
+    </div>
+</body>
+</html>

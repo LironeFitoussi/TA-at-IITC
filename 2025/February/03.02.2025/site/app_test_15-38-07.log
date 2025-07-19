@@ -1,0 +1,9 @@
+2025-02-03 15:38:07,165 - INFO - starting automation test
+2025-02-03 15:38:08,002 - INFO - Seaching Button
+2025-02-03 15:38:08,009 - INFO - Valudating Button
+2025-02-03 15:38:08,012 - INFO - Clicking Button
+2025-02-03 15:38:08,079 - INFO - Clicked on 'Show Modal' button.
+2025-02-03 15:38:08,104 - INFO - Clicked on 'Close' button in modal (no wait applied).
+2025-02-03 15:38:08,104 - INFO - Attempting to interact with iframe content without switching frames...
+2025-02-03 15:38:08,104 - INFO - Looking Fot iFrame
+2025-02-03 15:38:08,127 - INFO - Found text in iframe

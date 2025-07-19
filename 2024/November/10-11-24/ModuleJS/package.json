@@ -1,0 +1,13 @@
+{
+  "name": "modulejs",
+  "version": "1.0.0",
+  "main": "main-new.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon main-new.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

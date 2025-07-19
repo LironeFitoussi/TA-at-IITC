@@ -1,0 +1,61 @@
+/* Basic styles */
+body {
+    background-color: rgb(136, 136, 255);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+h1 {
+    text-align: center;
+}
+
+#new-task {
+    width: 50vw;
+    padding: 10px;
+}
+
+#add-task-btn {
+    padding: 10px;
+}
+
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* @media screen and (max-width: 760px) {
+    body {
+        background-color: bisque;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    body {
+        background-color: rgb(36, 194, 238);
+    }
+
+    #task-list { 
+        list-style-type: circle;
+    }
+} */
+

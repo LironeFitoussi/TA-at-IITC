@@ -1,0 +1,52 @@
+/* app/globals.css */
+
+body {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  background-color: #000435;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.slideshow {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slide {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide h1 {
+  font-size: 4em;
+}
+
+.code-block {
+  margin-top: 20px;
+}
+
+.challenge {
+  margin-top: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navigation button {
+  padding: 10px 20px;
+  font-size: 16px;
+}

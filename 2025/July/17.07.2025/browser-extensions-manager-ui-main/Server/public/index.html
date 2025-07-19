@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Blog App</title>
+    <script>
+      // Check if user is logged in and redirect accordingly
+      const token = localStorage.getItem("token");
+      window.location.href = token ? "/post-feed.html" : "/login.html";
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>

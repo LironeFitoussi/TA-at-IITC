@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --header-bg: 225 23% 24%;
+  --neutral-900: 227 75% 14%;
+  --neutral-800: 226 25% 17%;
+  --neutral-700: 225 23% 24%;
+  --neutral-600: 226 11% 37%;
+  --neutral-300: 0 0% 78%;
+  --neutral-200: 217 61% 90%;
+  --neutral-100: 0 0% 93%;
+  --neutral-0: 200 60% 99%;
+
+  --red-400: 3 86% 64%;
+  --red-500: 3 71% 56%;
+  --red-700: 3 77% 44%;
+
+  --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+.main-style-dark {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+}

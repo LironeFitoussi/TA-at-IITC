@@ -1,0 +1,13 @@
+project-root/
+├── src/
+│   ├── components/
+│   │   ├── SignIn.jsx
+│   │   ├── SignUp.jsx
+│   │   └── Dashboard.jsx
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js

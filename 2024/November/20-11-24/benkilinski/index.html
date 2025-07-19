@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation Example</h1>
+    <button id="changeTextButton">Change Text</button>
+    <button id="addElementButton">Add Element</button>
+    <div id="content">
+        <p id="text">This is some text that will be changed.</p>
+    </div>
+
+    <script>
+        document.getElementById('changeTextButton').addEventListener('click', function() {
+            document.getElementById('text').textContent = 'The text has been changed!';
+        });
+
+        document.getElementById('addElementButton').addEventListener('click', function() {
+            const newElement = document.createElement('p');
+            newElement.textContent = 'A new paragraph has been added!';
+            document.getElementById('content').appendChild(newElement);
+        });
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>

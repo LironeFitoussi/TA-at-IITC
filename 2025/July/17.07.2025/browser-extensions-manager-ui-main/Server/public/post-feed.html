@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Posts - Blog App</title>
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-content">
+        <h1>Blog App</h1>
+        <div class="nav-links">
+          <a
+            href="/add-post.html"
+            class="btn btn-primary"
+            >Add Post</a
+          >
+          <a
+            href="#"
+            id="logout-btn"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div
+        id="error-message"
+        class="error hidden"
+      ></div>
+      <div id="posts-container">
+        <!-- Posts will be dynamically added here -->
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/api.js"></script>
+    <script src="/js/auth-check.js"></script>
+    <script src="/js/post-feed.js"></script>
+  </body>
+</html>

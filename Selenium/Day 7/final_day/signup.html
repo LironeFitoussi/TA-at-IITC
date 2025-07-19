@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #form-container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    input, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2874a6;
+    }
+
+    #spinner {
+      display: none;
+      margin: 10px auto;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #status {
+      display: none;
+      margin-top: 10px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="form-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+      <input type="text" id="name" placeholder="Enter your name" required>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="file" id="file-upload" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="spinner"></div>
+    <div id="status">Sign-up successful! Your download is ready.</div>
+    <a id="download-link" href="dummy-image.png" download style="display: none;">Download Image</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const spinner = document.getElementById('spinner');
+    const status = document.getElementById('status');
+    const downloadLink = document.getElementById('download-link');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Ensure a file is selected
+      const fileInput = document.getElementById('file-upload');
+      if (!fileInput.files.length) {
+        alert("Please upload a file before submitting.");
+        return;
+      }
+
+      // Simulate loading
+      spinner.style.display = 'block';
+      status.style.display = 'none';
+      downloadLink.style.display = 'none';
+
+      setTimeout(() => {
+        spinner.style.display = 'none';
+        status.style.display = 'block';
+        downloadLink.style.display = 'block'; // Show the download link
+      }, 3000); // Simulate 3-second processing delay
+    });
+  </script>
+</body>
+</html>

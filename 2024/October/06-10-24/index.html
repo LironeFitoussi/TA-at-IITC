@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Project</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>My ATM Project</h1>
+    <!-- <p>#ביבי_המלך</p> <p>לא באמת</p> -->
+     <form>
+        <label for="amount">Enter Amount</label>
+        <input name="PIN" id="PIN" maxlength="4">
+        <button>Submit</button>
+     </form>
+
+    <p id="validation"></p>
+
+    <nav>
+        <ul>
+            <li>
+                <button id="deposit">Deposit</button>
+            </li>
+            <li>
+                <button id="withdraw">Withdraw</button>
+            </li>
+            <li>
+                <button id="balance">Balance</button>
+            </li>
+            <li>
+                <button id="lastTransaction">Last Transaction</button>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="withdrawEl" class="hidden">
+            <h1>
+                Withdraw
+            </h1>
+            <form action="">
+                <input placeholder="How much do you need?">
+                <button type="submit">Withdraw</button>
+            </form>
+        </div>
+        <div id="depositEl" class="hidden">
+            <h1>
+                Deposit
+            </h1>
+            <form action="">
+                <input placeholder="How much do we get?">
+                <button type="submit">Deposite</button>
+            </form>
+        </div>
+        <div id="balanceEl" class="hidden">
+            <h1>
+                Balance
+            </h1>
+            <p id="userBalance"></p>
+        </div>
+        <div id="lastTransactionEl" class="hidden">
+            <h1>
+                Last Transaction
+            </h1>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

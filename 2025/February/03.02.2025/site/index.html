@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Debugging Exercise</title>
+    <style>
+        /* Basic styling for the modal overlay */
+        #myModal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* Container box for modal content */
+        #modalContent {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            position: relative;
+        }
+
+        /* Close button in modal */
+        .closeBtn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            cursor: pointer;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .closeBtn:hover,
+        .closeBtn:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debugging Exercise</h1>
+    <p>
+        Use the buttons below to trigger different behaviors (<strong>alert</strong>, <strong>modal</strong>, <strong>iframe</strong>).  
+        Then create or debug your Selenium/WebDriver script to handle them properly.
+    </p>
+
+    <!-- Buttons to trigger alert and modal -->
+    <button id="alertBtn">Show Alert</button>
+    <button id="modalBtn">Show Modal</button>
+
+    <!-- Modal structure -->
+    <div id="myModal">
+        <div id="modalContent">
+            <span class="closeBtn" id="closeBtn">&times;</span>
+            <h2>Modal Content</h2>
+            <p>This is a simple modal. Click the close button or outside the box to dismiss it.</p>
+        </div>
+    </div>
+
+    <!-- iFrame with some sample content -->
+    <iframe id="testFrame"
+        srcdoc="<html><body><h3>iFrame Content</h3><p>This is an example iFrame content.</p></body></html>"
+        width="50%"
+        height="200">
+    </iframe>
+
+    <script>
+        // Handle Alert button
+        document.getElementById("alertBtn").addEventListener("click", function() {
+            alert("This is a test alert!");
+        });
+
+        // Handle Modal open/close
+        const modalBtn = document.getElementById("modalBtn");
+        const myModal  = document.getElementById("myModal");
+        const closeBtn = document.getElementById("closeBtn");
+
+        modalBtn.addEventListener("click", function() {
+            myModal.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", function() {
+            myModal.style.display = "none";
+        });
+
+        // Close modal if user clicks outside modal content
+        window.addEventListener("click", function(event) {
+            if (event.target === myModal) {
+                myModal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta description="this is an awesome site">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My First HTML Page</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <style>
+            h1 {
+                color: blueviolet;
+            }
+
+            .sp {
+                color: #ff54ac
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 class="special">Hello World! </h1>
+            <h2 style="margin: 0;">Hello</h2>
+        </header>
+        <div style="position: sticky; top: 50px;">
+            Hello
+        </div>
+        <main>
+            <h1 class="purple-color">Another Header</h1>
+            <p >This is the main content</p>
+            <span>this is a <p style="display: inline">Paragraph</p> element</span>
+            <p>
+                This is a <span style="color: red;">dummy paragraph</span> 
+                that makes use of various <b>inline</b> text tags. For example, 
+                you can use <i>italic</i> text to emphasize certain words,
+                 or <u>underline</u> text for added importance. Additionally, 
+                 you can use <mark >highlighted text</mark> to draw attention to specific
+                  parts of the paragraph. Finally, here is a <a href="#">link</a> 
+                  to demonstrate how links can be embedded within a paragraph.
+            </p>
+            <a href="https://www.wikipedia.org/" target="_blank">This is link to Wikipedia</a>
+            <a href="./index.html" download>Download SpongeBob</a>
+            <img src="./SpongeBob_SquarePants_character.svg" alt="A SpongeBob image" width="300" height="300">
+            
+            <!-- Unordered List -->
+            <ul > 
+                <li class="blue-background ">Coffee</li>
+                <li id="bloblo">Tea</li>
+                <li id="bloblo">Milk</li>
+                <li>Banana</li>
+            </ul>
+
+            <!-- Ordered List -->
+            <h2>מי הולך למות ראשון</h2>
+            <ol>
+                <li>נסראללה</li>
+                <li class="sp">סינוואר</li>
+                <li>חמיאני</li>
+            </ol>
+
+            <table border="1">
+                <!-- Table Head -->
+                <thead>
+                    <th class="sp">First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                </thead>
+
+                <!-- Table Row -->
+                <tbody>
+                    <tr>
+                        <td>Ron</td>
+                        <td class="sp">Sherling</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form onsubmit="alert('this is an Alert')"></form>
+                <label for="username">Username:</label>
+                <input placeholder="Jone Doe" id="username" name="username" required maxlength="10"><br><br>
+                
+                <label for="email">Email:</label>
+                <input class="sp" type="email" id="email" name="email" required><br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+                
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" max="99" min="18"><br><br>
+                <input type="file" name="file" id="file">
+                <input type="color" name="color" id="color">
+                <button type="button">Make a poop</button>
+                <button class="sp" type="reset">Reset</button>
+                <button>Submit</button>
+             </form>
+        </main>
+        <footer>
+            
+        </footer>
+    </body>
+</html>

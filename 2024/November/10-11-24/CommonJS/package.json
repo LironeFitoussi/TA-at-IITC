@@ -1,0 +1,16 @@
+{
+  "name": "commonjs",
+  "version": "1.0.0",
+  "main": "main-old.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "nodemon main-old.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

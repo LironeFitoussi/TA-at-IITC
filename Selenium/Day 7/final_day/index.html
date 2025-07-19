@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #container {
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #3498db;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2874a6;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Welcome to Our Platform</h1>
+    <p>Sign up now to access exclusive features!</p>
+    <button id="redirect-btn">Sign Up</button>
+  </div>
+
+  <script>
+    document.getElementById('redirect-btn').addEventListener('click', () => {
+      window.location.href = 'signup.html';
+    });
+  </script>
+</body>
+</html>

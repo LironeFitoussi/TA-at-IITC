@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Automation Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      z-index: 1000;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
+    }
+    .spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #ccc;
+      border-top: 4px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Multi-Step Automation Demo</h1>
+  
+  <button class="button" onclick="showAlert()">Step 1: Trigger Alert</button>
+  <button class="button" onclick="showModal()">Step 2: Open Modal</button>
+  <div class="spinner" id="spinner"></div>
+  <iframe src="https://www.wikipedia.org" title="iFrame Content" id="iframe"></iframe>
+
+  <!-- Modal Structure -->
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <h2>Modal Form</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+    <br><br>
+    <button class="button" onclick="submitModal()">Submit</button>
+    <button class="button" onclick="closeModal()">Close</button>
+  </div>
+
+  <script>
+    function log(message) {
+      console.log(`[Log]: ${message}`);
+    }
+
+    // Alert Step
+    function showAlert() {
+      log("Triggering alert...");
+      const response = confirm("Do you want to proceed?");
+      if (response) {
+        log("Alert accepted.");
+      } else {
+        log("Alert dismissed.");
+      }
+    }
+
+    // Modal Step
+    function showModal() {
+      log("Opening modal...");
+      document.getElementById("overlay").style.display = "block";
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      log("Closing modal...");
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function submitModal() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      log(`Form submitted with Name: ${name}, Email: ${email}`);
+      closeModal();
+    }
+
+    // iFrame Interaction with Spinner
+    document.getElementById("iframe").onload = function () {
+      log("iFrame loaded successfully.");
+    };
+
+    function simulateDelay() {
+      const spinner = document.getElementById("spinner");
+      log("Simulating delay...");
+      spinner.style.display = "block";
+      setTimeout(() => {
+        spinner.style.display = "none";
+        log("Delay complete.");
+      }, 3000);
+    }
+
+    // Start with delay for iFrame loading
+    simulateDelay();
+  </script>
+</body>
+</html>
