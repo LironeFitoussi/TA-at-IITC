@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
 import { Button } from './ui/button'
-
+import { Dialog, DialogTrigger, DialogPortal, DialogClose, DialogOverlay, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 interface User {
   id: number
   name: string
@@ -91,13 +91,25 @@ const UsersTable: React.FC = () => {
                   <TableCell>{user.name}</TableCell>
                   <TableCell>{user.email}</TableCell>
                   <TableCell>
-                    <Button 
-                      variant="destructive" 
-                      size="sm"
-                      onClick={() => handleDeleteUser(user.id)}
-                    >
-                      Delete
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger>
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                        // onClick={() => handleDeleteUser(user.id)}
+                        >
+                          Delete
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>
+                          This is the dialog
+                        </DialogTitle>
+                      </DialogHeader>
+                      </DialogContent>
+                    </Dialog>
+
                   </TableCell>
                 </TableRow>
               ))
