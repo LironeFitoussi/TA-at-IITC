@@ -24,8 +24,6 @@ export function UserForm() {
         }
     })
 
-
-
     const onSubmit = async (data: UserFormData) => {
         await new Promise(resolve => setTimeout(resolve, 3000))
         console.log(`Form is valid! Data: ${JSON.stringify(data, null, 2)}`);
