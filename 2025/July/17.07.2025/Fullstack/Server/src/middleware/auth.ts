@@ -19,7 +19,10 @@ export const authenticateToken = (req: AuthRequest, res: Response, next: NextFun
   const token = req.cookies.accessToken;
 
   if (!token) {
-    res.status(401).json({ message: 'Access denied. No token provided.' });
+    res.status(401).json({ 
+      message: 'Access denied. No token provided.',
+      note: 'Make sure cookies are enabled and you are logged in'
+    });
     return;
   }
 
@@ -28,7 +31,13 @@ export const authenticateToken = (req: AuthRequest, res: Response, next: NextFun
     req.user = decoded;
     next();
   } catch (error) {
-    res.status(403).json({ message: 'Invalid token.' });
+    if (error instanceof jwt.TokenExpiredError) {
+      res.status(401).json({ message: 'Token expired. Please login again.' });
+    } else if (error instanceof jwt.JsonWebTokenError) {
+      res.status(403).json({ message: 'Invalid token.' });
+    } else {
+      res.status(403).json({ message: 'Token verification failed.' });
+    }
   }
 };
 

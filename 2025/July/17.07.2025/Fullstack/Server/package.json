@@ -7,7 +7,9 @@
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "node test-collection.js",
+    "test:postman": "newman run postman_collection.json --delay-request 500"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

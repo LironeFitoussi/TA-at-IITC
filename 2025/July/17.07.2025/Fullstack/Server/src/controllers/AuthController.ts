@@ -8,12 +8,6 @@ const AuthController = {
     try {
       const { email, password, name }: RegisterRequest = req.body;
 
-      // Validate input
-      if (!email || !password || !name) {
-        res.status(400).json({ message: 'All fields are required' });
-        return;
-      }
-
       // Check if user already exists
       const existingUser = await UserModel.findByEmail(email);
       if (existingUser) {
@@ -26,8 +20,8 @@ const AuthController = {
       
       // Generate token
       const token = generateAccessToken({ userId: user.id, email: user.email });
-      
-      // Set cookie
+
+      // Set HTTP-only cookie
       res.cookie('accessToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
@@ -40,23 +34,19 @@ const AuthController = {
         user: {
           id: user.id,
           email: user.email,
-          name: user.name
+          name: user.name,
+          createdAt: user.createdAt
         }
       });
     } catch (error) {
-      res.status(500).json({ message: 'Server error' });
+      console.error('Registration error:', error);
+      res.status(500).json({ message: 'Server error during registration' });
     }
   },
 
   async login(req: Request, res: Response): Promise<void> {
     try {
       const { email, password }: LoginRequest = req.body;
-
-      // Validate input
-      if (!email || !password) {
-        res.status(400).json({ message: 'Email and password are required' });
-        return;
-      }
 
       // Find user
       const user = await UserModel.findByEmail(email);
@@ -68,14 +58,14 @@ const AuthController = {
       // Validate password
       const isValid = await UserModel.validatePassword(password, user.password);
       if (!isValid) {
-        res.status(400).json({ message: 'Invalid credentials, something went wrong with validation' });
+        res.status(400).json({ message: 'Invalid credentials' });
         return;
       }
 
       // Generate token
       const token = generateAccessToken({ userId: user.id, email: user.email });
 
-      // Set cookie
+      // Set HTTP-only cookie
       res.cookie('accessToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
@@ -88,11 +78,13 @@ const AuthController = {
         user: {
           id: user.id,
           email: user.email,
-          name: user.name
+          name: user.name,
+          createdAt: user.createdAt
         }
       });
     } catch (error) {
-      res.status(500).json({ message: 'Server error' });
+      console.error('Login error:', error);
+      res.status(500).json({ message: 'Server error during login' });
     }
   },
 
@@ -108,17 +100,93 @@ const AuthController = {
         user: {
           id: user.id,
           email: user.email,
-          name: user.name
+          name: user.name,
+          createdAt: user.createdAt
         }
       });
     } catch (error) {
+      console.error('GetMe error:', error);
       res.status(500).json({ message: 'Server error' });
     }
   },
 
   async logout(req: Request, res: Response): Promise<void> {
-    res.clearCookie('accessToken');
-    res.json({ message: 'Logged out successfully' });
+    try {
+      res.clearCookie('accessToken', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict'
+      });
+      res.json({ message: 'Logged out successfully' });
+    } catch (error) {
+      console.error('Logout error:', error);
+      res.status(500).json({ message: 'Server error during logout' });
+    }
+  },
+
+  async getAllUsers(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const users = UserModel.getAllUsers();
+      
+      // Remove password field from response
+      const safeUsers = users.map(user => ({
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        createdAt: user.createdAt
+      }));
+
+      res.json({
+        message: `Found ${safeUsers.length} users`,
+        users: safeUsers,
+        total: safeUsers.length
+      });
+    } catch (error) {
+      console.error('Get all users error:', error);
+      res.status(500).json({ message: 'Server error while fetching users' });
+    }
+  },
+
+  async deleteUser(req: AuthRequest, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      
+      console.log(`🗑️ Delete request: User ${req.user!.userId} trying to delete user ${id}`);
+      
+      // Prevent users from deleting themselves (optional safety check)
+      if (id === req.user!.userId) {
+        console.log(`❌ Self-deletion attempt blocked`);
+        res.status(400).json({ message: 'Cannot delete your own account using this endpoint' });
+        return;
+      }
+
+      const user = await UserModel.findById(id);
+      if (!user) {
+        console.log(`❌ User ${id} not found`);
+        res.status(404).json({ message: 'User not found' });
+        return;
+      }
+
+      const deleted = UserModel.deleteUser(id);
+      
+      if (deleted) {
+        console.log(`✅ User ${id} deleted successfully`);
+        res.json({ 
+          message: 'User deleted successfully',
+          deletedUser: {
+            id: user.id,
+            email: user.email,
+            name: user.name
+          }
+        });
+      } else {
+        console.log(`❌ Failed to delete user ${id}`);
+        res.status(404).json({ message: 'User not found' });
+      }
+    } catch (error) {
+      console.error('Delete user error:', error);
+      res.status(500).json({ message: 'Server error while deleting user' });
+    }
   }
 };
 
