@@ -20,7 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('tiny'));
 
-// Routes
+// Routes Import
+import authRoutes from './routes/auth.route'
+
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -30,6 +32,9 @@ app.get('/api/health', (req, res) => {
     version: '1.0.0'
   });
 });
+
+app.use('/api/auth', authRoutes)
+
 
 // Start server
 app.listen(PORT, () => {
