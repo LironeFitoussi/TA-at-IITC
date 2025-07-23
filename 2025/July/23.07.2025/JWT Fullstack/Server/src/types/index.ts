@@ -5,3 +5,10 @@ export interface IUser {
     password: string;
     createdAt: Date;
 }
+
+export type AuthRequest = Omit<IUser, 'id' | 'createdAt'>
+
+export interface AuthPayload {
+    userId: string;
+    email: string;
+}

@@ -20,6 +20,10 @@ const UserModel = {
         users.push(user);
         console.log(`User craeted: ${user.email}`);
         return user
+    },
+
+    async findByEmail(email: string): Promise<IUser | undefined> {
+        return users.find((user) => user.email === email)
     }
 }
 

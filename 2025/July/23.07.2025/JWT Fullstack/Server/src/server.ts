@@ -4,6 +4,12 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
+// Routes Import
+import authRoutes from './routes/auth.route'
+
+// middlewares
+import { authenticateToken } from './middleware/auth'
+
 dotenv.config();
 
 const app = express();
@@ -20,12 +26,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan('tiny'));
 
-// Routes Import
-import authRoutes from './routes/auth.route'
 
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get('/api/health', authenticateToken, (req, res) => {
   res.json({ 
     message: 'Server is running!',
     timestamp: new Date().toISOString(),
