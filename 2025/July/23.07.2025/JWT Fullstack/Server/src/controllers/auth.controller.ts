@@ -22,7 +22,7 @@ const AuthController = {
                 password
             })
 
-            const token = generateAccessToken({userId: newUser.id, email: newUser.email})
+            const token = generateAccessToken({ userId: newUser.id, email: newUser.email })
 
             res.cookie('accessToken', token, {
                 httpOnly: true,
@@ -38,6 +38,50 @@ const AuthController = {
                     email: newUser.email,
                     name: newUser.name,
                     createdAt: newUser.createdAt
+                }
+            })
+        } catch (error) {
+            console.error('Registration error:', error);
+            res.status(500).json({ message: 'Server error during registration' });
+        }
+    },
+
+    async signin(req: Request, res: Response): Promise<void> {
+        try {
+            const { email, password } = req.body;
+
+            // .1 Find User
+            const user = await UserModel.findByEmail(email);
+            if (!user) {
+                res.status(400).json({
+                    message: "User Not Found"
+                })
+                return
+            }
+
+            // Validate Password
+            const isValid = await UserModel.validatePassword(password, user.password)
+            if (!isValid) {
+                res.status(400).json({ message: 'Invalid credentials' });
+                return;
+            }
+
+            const token = generateAccessToken({ userId: user.id, email: user.email })
+
+            res.cookie('accessToken', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                maxAge: 24 * 60 * 60 * 1000
+            })
+
+            res.status(201).json({
+                message: 'User Created successfully',
+                user: {
+                    id: user.id,
+                    email: user.email,
+                    name: user.name,
+                    createdAt: user.createdAt
                 }
             })
         } catch (error) {

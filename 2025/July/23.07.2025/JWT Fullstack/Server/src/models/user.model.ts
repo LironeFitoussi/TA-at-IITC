@@ -24,6 +24,10 @@ const UserModel = {
 
     async findByEmail(email: string): Promise<IUser | undefined> {
         return users.find((user) => user.email === email)
+    },
+
+    async validatePassword (plainPassword: string, hashedPassword: string): Promise<boolean> {
+        return await bcrypt.compare(plainPassword, hashedPassword)
     }
 }
 
