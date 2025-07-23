@@ -7,7 +7,9 @@ const AuthController = {
         try {
             const { name, email, password }: Omit<IUser, 'id' | 'createdAt'> = req.body
 
-            // TODO: Add Existing SUer Validation
+            // TODO: Add Existing User Validation
+
+
             const newUser = await UserModel.create({
                 name,
                 email,
