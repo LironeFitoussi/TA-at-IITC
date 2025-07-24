@@ -7,7 +7,7 @@ interface UserDetailsProps {
 }
 
 const fetchUser = async (id: number): Promise<User> => {
-    const response = await axios.get<User>(`https://jsonplaceholder.typicode.com/user/${id}`);
+    const response = await axios.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`);
     return response.data;
 };
 

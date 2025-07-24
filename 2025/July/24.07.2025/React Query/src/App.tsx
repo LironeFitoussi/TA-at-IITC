@@ -3,6 +3,7 @@ import { useState } from 'react'
 // Components
 import UsersWithTraditionalState from './components/UsersWithTraditionalState'
 import UserDetails from './components/UserDetails'
+import RandomPost from './components/RandomPost'
 
 function App() {
   const [ selectedUserId, setSelectedUserId ] = useState<number | null>(null)
@@ -18,9 +19,8 @@ function App() {
             Comparing traditional state management vs React Query for data fetching and mutations
           </p>
         </header>
-
-        <div className="space-y-8">
-          {/* Users Section */}
+        <RandomPost />
+        {/* <div className="space-y-8">
           <section>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Users Data Fetching</h2>
             <div className="grid gap-6 lg:grid-cols-2">
@@ -32,7 +32,7 @@ function App() {
             <p>Data source: JSONPlaceholder API</p>
           </footer>
         </div>
-        {selectedUserId && <UserDetails userId={selectedUserId} />}
+        {selectedUserId && <UserDetails userId={selectedUserId} />} */}
       </div>
     </div>
   )
