@@ -1,23 +1,32 @@
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import type { User } from '../types/user';
+import { useUser } from "@/hooks/userHooks";
+import { useState } from 'react';
 
-interface UsersWithReactQueryProps {
+interface UsersListProps {
     handleClick: (userId: number) => void
 }
 
-const fetchUsers = async (): Promise<User[]> => {
-    const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
-    return response.data;
-};
+export default function UsersList({handleClick}: UsersListProps) {
+    const [selectedLetter, setSelectedLetter ] = useState('a')
 
-export default function UsersWithReactQuery({handleClick}: UsersWithReactQueryProps) {
-    const { data: users = [], isLoading, error } = useQuery({
-        queryKey: ['users'], queryFn: fetchUsers
-    });
+    const { data: users = [], isLoading, error } = useUser(selectedLetter)
 
     return (
         <div className="p-6 border rounded-lg">
+            <div className="mb-6 flex flex-wrap gap-1">
+                {Array.from({ length: 26 }, (_, i) => {
+                    const letter = String.fromCharCode(97 + i); // 'a' to 'z'
+                    return (
+                        <button
+                            key={letter}
+                            className={`px-2 py-1 rounded text-sm font-medium border ${selectedLetter === letter ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-blue-100'}`}
+                            onClick={() => setSelectedLetter(letter)}
+                            type="button"
+                        >
+                            {letter.toUpperCase()}
+                        </button>
+                    );
+                })}
+            </div>
             {isLoading && (
                 <div className="text-center py-4">
                     <p className="text-gray-600">Loading users...</p>
@@ -31,6 +40,7 @@ export default function UsersWithReactQuery({handleClick}: UsersWithReactQueryPr
                     </p>
                 </div>
             )}
+
 
             {!isLoading && !error && (
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

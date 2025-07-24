@@ -1,13 +1,13 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 
 // Components
-// import UsersWithTraditionalState from './components/UsersWithTraditionalState'
-// import UserDetails from './components/UserDetails'
+import UsersWithTraditionalState from './components/UsersList'
+import UserDetails from './components/UserDetails'
 // import RandomPost from './components/RandomPost'
-import { UserForm } from './components/UserForm'
+// import { UserForm } from './components/UserForm'
 
 function App() {
-  // const [ selectedUserId, setSelectedUserId ] = useState<number | null>(null)
+  const [ selectedUserId, setSelectedUserId ] = useState<number | null>(null)
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -21,8 +21,8 @@ function App() {
           </p>
         </header>
         {/* <RandomPost /> */}
-        <UserForm />
-        {/* <div className="space-y-8">
+        {/* <UserForm /> */}
+        <div className="space-y-8">
           <section>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Users Data Fetching</h2>
             <div className="grid gap-6 lg:grid-cols-2">
@@ -34,7 +34,7 @@ function App() {
             <p>Data source: JSONPlaceholder API</p>
           </footer>
         </div>
-        {selectedUserId && <UserDetails userId={selectedUserId} />} */}
+        {selectedUserId && <UserDetails userId={selectedUserId} />}
       </div>
     </div>
   )
