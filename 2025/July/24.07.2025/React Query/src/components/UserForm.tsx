@@ -23,13 +23,11 @@ export function UserForm() {
         }
     })
 
-    const onSubmit = async (data: PostFormData): Promise<void> => {
-        await axios.post<Post>(`https://jsonplaceholder.typicode.com/posts`, data);
-    };
-
     const mutation = useMutation({
-        mutationFn: onSubmit,
+        mutationFn: async (data: PostFormData) => await axios.post<Post>(`https://jsonplaceholder.typicode.com/posts`, data),
+        onSuccess: () => form.reset()
     })
+    
     return (
         <div className='bg-card p-8 rounded-xl shadow-sm border mb-8'>
             <Form {...form}>
